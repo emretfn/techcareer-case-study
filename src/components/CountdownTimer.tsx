@@ -6,6 +6,8 @@ const CountdownTimer = () => {
     minutes: 5,
     seconds: 0,
   });
+  const [inputMinute, setInputMinute] = useState(5);
+  const [inputSecond, setInputSecond] = useState(0);
   const [isRunning, setIsRunning] = useState(false);
 
   useEffect(() => {
@@ -38,12 +40,38 @@ const CountdownTimer = () => {
     return () => clearInterval(timer);
   }, [time, isRunning]);
 
+  const handleSetTimer = () => {
+    setTime({
+      minutes: inputMinute,
+      seconds: inputSecond,
+    });
+  };
+
   const formatTime = (time: number) => {
     return time < 10 ? `0${time}` : time;
   };
 
   return (
     <div className={styles.timerWrapper}>
+      <div className={styles.inputWrapper}>
+        <input
+          type="number"
+          name="minute"
+          value={inputMinute}
+          className={styles.input}
+          onChange={(e) => setInputMinute(Number(e.target.value))}
+        />
+        <input
+          type="number"
+          name="second"
+          value={inputSecond}
+          className={styles.input}
+          onChange={(e) => setInputSecond(Number(e.target.value))}
+        />
+        <button className="btn" onClick={handleSetTimer}>
+          Set Timer
+        </button>
+      </div>
       <div className={styles.timer}>
         {formatTime(time.minutes)} : {formatTime(time.seconds)}
       </div>

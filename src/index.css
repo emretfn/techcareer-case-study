@@ -4,8 +4,12 @@
   box-sizing: border-box;
 }
 
+:root {
+  --dark-bg: #1e1e1e;
+}
+
 body {
-  background-color: #1e1e1e;
+  background-color: var(--dark-bg);
   color: white;
   font-family: "Roboto", sans-serif;
 }
@@ -19,6 +23,7 @@ body {
 
 /* Shared btn */
 .btn {
+  background-color: #2ecc71;
   border: none;
   border-radius: 9999px;
   color: white;

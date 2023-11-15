@@ -8,3 +8,24 @@
   font-size: 10rem;
   font-weight: 700;
 }
+
+.inputWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+/* square number input */
+.input[type="number"] {
+  border: none;
+  font-size: 2rem;
+  border-radius: 9999px;
+  font-weight: 700;
+  padding: 1rem 2rem;
+  transition: all 0.3s ease;
+  width: 8rem;
+  text-align: center;
+  background-color: white;
+  color: var(--dark-bg);
+}
