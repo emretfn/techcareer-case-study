@@ -1,10 +1,10 @@
-import "./App.css";
+import CountdownTimer from "./components/CountdownTimer";
 
 function App() {
   return (
-    <>
-      <div>App</div>
-    </>
+    <div className="container">
+      <CountdownTimer />
+    </div>
   );
 }
 
